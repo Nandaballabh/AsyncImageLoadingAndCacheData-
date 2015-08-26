@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vp3-VZ-QeO">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="wzb-pb-dJI">
+            <objects>
+                <navigationController id="vp3-VZ-QeO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DzA-GM-0Kc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oCP-Aa-OjN" kind="relationship" relationship="rootViewController" id="uke-cI-slQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5P-Yw-iwI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Get Users-->
+        <scene sceneID="ilU-qP-gnb">
+            <objects>
+                <viewController id="oCP-Aa-OjN" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hVY-l1-AQm"/>
+                        <viewControllerLayoutGuide type="bottom" id="f1c-TM-fqx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6ax-zR-Srh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XGk-tc-7pc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.72156862749999995" blue="0.82352941180000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="john@doe.com" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMH-fy-mxp">
+                                <rect key="frame" x="150" y="100" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="rVf-dS-KMh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oCP-Aa-OjN" id="iM6-2m-CgB"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XGk-tc-7pc" secondAttribute="trailing" id="4E7-qq-bQT"/>
+                            <constraint firstItem="XGk-tc-7pc" firstAttribute="top" secondItem="6ax-zR-Srh" secondAttribute="top" id="9at-yI-kIG"/>
+                            <constraint firstItem="XGk-tc-7pc" firstAttribute="leading" secondItem="6ax-zR-Srh" secondAttribute="leading" id="h3E-QB-LbP"/>
+                            <constraint firstAttribute="centerX" secondItem="LMH-fy-mxp" secondAttribute="centerX" id="n62-nJ-i3j"/>
+                            <constraint firstItem="LMH-fy-mxp" firstAttribute="top" secondItem="hVY-l1-AQm" secondAttribute="bottom" constant="36" id="vl3-c9-l6B"/>
+                            <constraint firstItem="f1c-TM-fqx" firstAttribute="top" secondItem="XGk-tc-7pc" secondAttribute="bottom" id="yNp-Ky-1od"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Get Users" id="vpx-Ac-h3P"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="LMH-fy-mxp" id="Q2p-wX-8W5"/>
+                        <outlet property="view" destination="6ax-zR-Srh" id="ugt-0r-zYU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6A0-d1-hLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Users Table View Controller-->
+        <scene sceneID="TVP-aS-yiL">
+            <objects>
+                <tableViewController storyboardIdentifier="UsersVIewSrorybradID" id="n7p-YA-qu6" customClass="UsersTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="ec4-1i-oJp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="UsersCellIdentifier" rowHeight="80" id="jfa-01-2A6" customClass="UserCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jfa-01-2A6" id="IrZ-W0-mSA">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpd-2L-nRG">
+                                            <rect key="frame" x="30" y="10" width="60" height="60"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hrc-wb-0mH">
+                                            <rect key="frame" x="115" y="15" width="470" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKe-2A-dNK">
+                                            <rect key="frame" x="115" y="44" width="470" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="userImageView" destination="rpd-2L-nRG" id="Ua3-ue-IAf"/>
+                                    <outlet property="userNameLabel" destination="Hrc-wb-0mH" id="9wg-sF-olQ"/>
+                                    <outlet property="useremailLabel" destination="uKe-2A-dNK" id="QU6-1f-Lgz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="n7p-YA-qu6" id="XFf-zT-ebr"/>
+                            <outlet property="delegate" destination="n7p-YA-qu6" id="bV8-fi-msP"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBt-83-qXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

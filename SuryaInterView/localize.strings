@@ -1,0 +1,9 @@
+/* 
+  localize.strings
+  SuryaInterView
+
+  Created by Nanda Ballabh on 8/26/15.
+  Copyright (c) 2015 Nanda Ballabh. All rights reserved.
+*/
+
+"genericError.Message" = "Something went wrong.\nPlease try again.";
